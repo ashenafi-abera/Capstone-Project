@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="ashenafi-capstone-project-test-suite.xml" />
+	<munit:test name="ashenafi-capstone-project-test-suite-put:\users:application\json:ashenafi-capstone-project-configTest" description="Test" doc:id="4796e910-026f-4698-8318-037b56475ba4" >
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="87edbad9-3159-4d3b-90b7-f08ef7fafb04" >
+			</munit:set-event>
+			<flow-ref doc:name="Flow-ref to put:\users:application\json:ashenafi-capstone-project-config" doc:id="3f7d3b2e-5a81-4fc8-89c8-3d8cf32f44bd" name="put:\users:application\json:ashenafi-capstone-project-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="795f167f-3bcf-40d1-a54b-60f4bc5300df" expression="#[payload]" is="#[MunitTools::notNullValue()]" message="Not null value is expected"/>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="ashenafi-capstone-project-test-suite-delete:\users:ashenafi-capstone-project-configTest" description="Test" doc:id="f49ea642-40a0-433f-826b-4f97de0147c7" >
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="35bca1c2-22a8-443e-a315-4a5910a7f9f8" />
+			<flow-ref doc:name="Flow-ref to delete:\users:ashenafi-capstone-project-config" doc:id="fbd7d0b8-f008-4379-8cc5-9d008f49c632" name="delete:\users:ashenafi-capstone-project-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="831cd11a-be69-490f-8e98-d5a834d2b887" expression="#[payload]" is="#[MunitTools::notNullValue()]" message="Value is expected"/>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="ashenafi-capstone-project-test-suite-get:\users:ashenafi-capstone-project-configTest" description="Test" doc:id="acf1e468-f541-4fe6-a5a0-93de1b653b9c" >
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="c72abdcb-b7be-46ee-8699-f64cdf13231c" />
+			<flow-ref doc:name="Flow-ref to get:\users:ashenafi-capstone-project-config" doc:id="44a14ee5-c1bd-4d5c-9be1-d616d65848be" name="get:\users:ashenafi-capstone-project-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="8b56dd90-bac4-48ae-8caa-e3cfc3e71527" expression="#[payload]" is="#[MunitTools::notNullValue()]" message="Value expected"/>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="ashenafi-capstone-project-test-suite-get:\users\(id):ashenafi-capstone-project-configTest" description="Test" doc:id="20ded7f0-dfe2-4999-804c-d90ae0a9c0eb" >
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="d8c0d871-b54f-4812-84d9-492839af623f" />
+			<flow-ref doc:name="Flow-ref to get:\users\(id):ashenafi-capstone-project-config" doc:id="7a30eb02-2f46-4d53-bb96-8d01d19c1313" name="get:\users\(id):ashenafi-capstone-project-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="513ed5e2-dd83-4757-915a-1967f331132f" expression="#[payload]" is="#[MunitTools::notNullValue()]" message="Value is expected from payload"/>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="ashenafi-capstone-project-test-suite-post:\users:application\json:ashenafi-capstone-project-configTest" description="Test" doc:id="02097700-60cb-40ff-a8f7-195a665253b8" >
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="bfd39618-ad7f-42c3-8259-cb88a48da746" />
+			<flow-ref doc:name="Flow-ref to post:\users:application\json:ashenafi-capstone-project-config" doc:id="1f1a6c2e-1616-4130-a74c-44743e8dae94" name="post:\users:application\json:ashenafi-capstone-project-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="35394f4e-a48b-427e-b00c-3e3da3d4b660" expression="#[payload]" is="#[MunitTools::notNullValue()]" message="Payload value is expected"/>
+		</munit:validation>
+	</munit:test>
+
+</mule>
